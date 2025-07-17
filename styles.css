@@ -1,34 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@400;700&display=swap');
+
 :root {
-    --primary-color: rgb(29, 131, 161);
-    --primary-color-darker: rgb(16, 70, 87);
+    --primary-color: #1a5276; /* Azul escuro moderno */
+    --secondary-color: #f4f7f6; /* Quase branco para fundos claros */
+    --text-color: #333;
+    --light-text-color: #f8f8f8;
+    --accent-color: #28a745; /* Verde para destaque, se necessário */
 }
 
 * {
-  box-sizing: border-box;  
-  outline: 0;
- }
- body {
-     margin: 0;
-     padding: 0;
-     background: var(--primary-color);
-     font-family: 'Open Sans', sans-serif;
-     font-size: 1.3em;
-     line-height: 1.5em;
- }
+    box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
 
- .h1head{
-    text-shadow: 2px 2px 5px rgb(2, 2, 2);
-     position: relative;
-     top: 50%;
-     color: whitesmoke;
-     text-align: center;
- }
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
- .container {
-     max-width: 760px;
-     margin: 50px auto;
-     background: rgb(235, 231, 231);
-     padding: 20px;
-     border-radius: 10px;
- }
+.header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.main-content {
+    flex-grow: 1; /* Garante que o conteúdo principal ocupe o espaço restante */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 900px; /* Largura máxima para o PDF, ajustável */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que o PDF não transborde */
+    margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+.pdf-viewer {
+    width: 100%;
+    /* Altura será ajustada com JS ou um valor fixo. Para responsividade inicial, usamos viewport height */
+    height: 85vh; /* Ocupa 85% da altura da viewport. Ajuste conforme necessário. */
+    border: none;
+    display: block; /* Remove espaço extra abaixo do embed */
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer p {
+    margin: 0.3rem 0;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .pdf-viewer {
+        height: 75vh; /* Reduz a altura em telas menores para melhor visualização */
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .header p {
+        font-size: 0.9em;
+    }
+
+    .pdf-container {
+        margin: 10px 0;
+    }
+    
+    .pdf-viewer {
+        height: 70vh; /* Ainda mais compacto em celulares */
+    }
+}
