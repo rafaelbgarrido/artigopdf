@@ -1,13 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding-top: 50px; /* Ajuste a margem superior aqui, por exemplo, 50px */
-    background-color: #e9ecef; /* Cor de fundo suave */
+    padding-top: 50px;
+    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     min-height: 100vh;
     color: #333;
 }
+
 .container {
     background-color: #ffffff;
     border-radius: 12px;
@@ -18,21 +19,23 @@ body {
     box-sizing: border-box;
     text-align: center;
 }
+
 h1 {
     color: #2c3e50;
-    margin-bottom: 40px; /* Espaço maior para o div abaixo */
-    font-size: 2.5em; /* Fonte um pouco maior */
-    font-weight: 700; /* Mais negrito */
-    letter-spacing: -0.02em; /* Espaçamento entre letras mais justo */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra suave no texto */
-    padding-bottom: 10px; /* Espaço interno para a linha de baixo */
-    border-bottom: 2px solid rgba(44, 62, 80, 0.1); /* Linha sutil embaixo */
-    display: inline-block; /* Para a borda e padding funcionarem bem */
-    max-width: 100%; /* Garante que não ultrapasse o container */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+    display: inline-block;
+    max-width: 100%;
 }
+
 .pdf-viewer-wrapper {
     position: relative;
-    padding-bottom: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
+    padding-bottom: 75%;
     height: 0;
     overflow: hidden;
     background-color: #ecf0f1;
@@ -40,6 +43,7 @@ h1 {
     margin-top: 20px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
+
 .pdf-viewer-wrapper iframe {
     position: absolute;
     top: 0;
@@ -49,15 +53,18 @@ h1 {
     border: none;
     border-radius: 8px;
 }
+
 .instructions {
     margin-top: 30px;
     font-size: 1.1em;
     color: #555;
     line-height: 1.6;
 }
+
 .instructions p {
     margin-bottom: 10px;
 }
+
 .instructions strong {
     color: #2980b9;
 }
