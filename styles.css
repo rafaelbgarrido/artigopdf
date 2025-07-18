@@ -1,122 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@400;700&display=swap');
-
-:root {
-    --primary-color: #1a5276; /* Azul escuro moderno */
-    --secondary-color: #f4f7f6; /* Quase branco para fundos claros */
-    --text-color: #333;
-    --light-text-color: #f8f8f8;
-    --accent-color: #28a745; /* Verde para destaque, se necessário */
-}
-
-* {
-    box-sizing: border-box;  
-    margin: 0;
-    padding: 0;
-    outline: 0;
-}
-
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.header {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.8em;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.header p {
-    font-size: 1.2em;
-    opacity: 0.9;
-}
-
-.main-content {
-    flex-grow: 1; /* Garante que o conteúdo principal ocupe o espaço restante */
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 50px; /* Ajuste a margem superior aqui, por exemplo, 50px */
+    background-color: #e9ecef; /* Cor de fundo suave */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    min-height: 100vh;
+    color: #333;
 }
-
-.pdf-container {
-    width: 100%;
-    max-width: 900px; /* Largura máxima para o PDF, ajustável */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Garante que o PDF não transborde */
-    margin: 20px 0; /* Espaçamento superior e inferior */
-}
-
-.pdf-viewer {
-    width: 100%;
-    /* Altura será ajustada com JS ou um valor fixo. Para responsividade inicial, usamos viewport height */
-    height: 85vh; /* Ocupa 85% da altura da viewport. Ajuste conforme necessário. */
-    border: none;
-    display: block; /* Remove espaço extra abaixo do embed */
-}
-
-.footer {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9em;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.footer p {
-    margin: 0.3rem 0;
+h1 {
+    color: #2c3e50;
+    margin-bottom: 40px; /* Espaço maior para o div abaixo */
+    font-size: 2.5em; /* Fonte um pouco maior */
+    font-weight: 700; /* Mais negrito */
+    letter-spacing: -0.02em; /* Espaçamento entre letras mais justo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra suave no texto */
+    padding-bottom: 10px; /* Espaço interno para a linha de baixo */
+    border-bottom: 2px solid rgba(44, 62, 80, 0.1); /* Linha sutil embaixo */
+    display: inline-block; /* Para a borda e padding funcionarem bem */
+    max-width: 100%; /* Garante que não ultrapasse o container */
 }
-
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2em;
-    }
-
-    .header p {
-        font-size: 1em;
-    }
-
-    .pdf-viewer {
-        height: 75vh; /* Reduz a altura em telas menores para melhor visualização */
-    }
-
-    .main-content {
-        padding: 10px;
-    }
+.pdf-viewer-wrapper {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
+    height: 0;
+    overflow: hidden;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.8em;
-    }
-
-    .header p {
-        font-size: 0.9em;
-    }
-
-    .pdf-container {
-        margin: 10px 0;
-    }
-    
-    .pdf-viewer {
-        height: 70vh; /* Ainda mais compacto em celulares */
-    }
+.pdf-viewer-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+.instructions {
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+.instructions p {
+    margin-bottom: 10px;
+}
+.instructions strong {
+    color: #2980b9;
 }
